@@ -542,15 +542,15 @@ bool jugarPartida(Casilla** tablero, int filas, int columnas, int minas, int* ju
 
         if (accion == 'B') {
             if (casilla->revelada) {
-                mensaje = "Esa casilla ya está revelada.";
+                mensaje = "Esa casilla ya está destapada, elige otra.";
             } else {
                 alternarBandera(casilla, &banderas);
                 Beep(1200, 40);
             }
         } else if (casilla->bandera) {
-            mensaje = "Quita la bandera (B) antes de revelar esa casilla.";
+            mensaje = "Esa casilla tiene bandera. Si quieres revelarla, primero quítala con B.";
         } else if (casilla->revelada) {
-            mensaje = "Esa casilla ya está revelada.";
+            mensaje = "Esa casilla ya está destapada, elige otra.";
         } else if (casilla->esMina) {
             casilla->revelada = true;
             vidas--;
